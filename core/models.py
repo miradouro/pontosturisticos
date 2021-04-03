@@ -9,7 +9,7 @@ from enderecos.models import Endereco
 class PontoTuristico(models.Model):
     nome = models.CharField(max_length=150)
     descricao = models.TextField()
-    aprovado = models.BooleanField(default=False)
+    aprovado = models.BooleanField(default=True)
     atracoes = models.ManyToManyField(Atracao)
     comentarios = models.ManyToManyField(Comentario)
     avaliacoes = models.ManyToManyField(Avaliacao)
