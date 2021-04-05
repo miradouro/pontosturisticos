@@ -1,1 +1,1 @@
-web: gunicorn urestgregory.wsgi
+web: gunicorn urestgregory.wsgi --log-file -
