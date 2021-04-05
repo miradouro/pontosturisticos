@@ -10,30 +10,31 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-from pathlib import Path
 from decouple import config
 from dj_database_url import parse as dburl
 
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 
+#BASE_DIR = Path(__file__).resolve().parent.parent
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-"""SECRET_KEY = 'u)7jk7olysrtr6x@c5+8_2&*2hown+b&fscvn!upjj93a*2w_4'"""
+SECRET_KEY = 'u)7jk7olysrtr6x@c5+8_2&*2hown+b&fscvn!upjj93a*2w_4'
 
-SECRET_KEY = config('SECRET_KEY')
+"""SECRET_KEY = config('SECRET_KEY')"""
 
 # SECURITY WARNING: don't run with debug turned on in production!
-"""DEBUG = True"""
+DEBUG = True
 
-DEBUG = config('DEBUG', default=False, cast=bool)
+"""DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ["https://urestgregory.herokuapp.com", "localhost:8000", ".herokuapp.com", ".researchthroughdesign.org"]
+ALLOWED_HOSTS = ["https://urestgregory.herokuapp.com", "localhost:8000", ".herokuapp.com", ".researchthroughdesign.org"]"""
 
 
 # Application definition
@@ -98,7 +99,7 @@ WSGI_APPLICATION = 'pontos_turisticos.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
+DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
 
 
 # Password validation
