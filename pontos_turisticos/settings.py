@@ -33,7 +33,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://urestgregory.herokuapp.com', 'localhost:8000']
+ALLOWED_HOSTS = ["https://urestgregory.herokuapp.com", "localhost:8000", ".herokuapp.com", ".researchthroughdesign.org"]
 
 
 # Application definition
